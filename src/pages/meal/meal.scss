@@ -1,0 +1,39 @@
+.md, .ios {
+  page-meal {
+
+    section.calculator {
+      padding: 0 12px;
+      ion-input {
+
+      }
+    }
+
+
+    .percentage {
+      .input-wrapper {
+        flex-direction: row-reverse;
+      }
+      input {
+        text-align: right;
+      }
+      .input-cover {
+        position: static;
+      }
+    }
+
+    .pin-to-bottom {
+      position: absolute;
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+      }
+    }
+  }
+}

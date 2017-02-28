@@ -1,0 +1,88 @@
+<!--
+  Generated template for the Meal page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Meal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <pre> {{ keyboard | json }} </pre>
+
+  <section class="calculator">
+    <ion-row>
+      <ion-col col-2>
+        <button ion-button icon-only full (press)="incrementSubtotal(1, true)" (tap)="incrementSubtotal(1)">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col col-8>
+        <ion-item class="percentage">
+          <ion-input type="tel" [textMask]="{ mask: tipMask }" ([ngModel])="subtotal"></ion-input>
+          <ion-label> % </ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-2>
+        <button ion-button icon-only full (press)="incrementSubtotal(-1, true)" (tap)="incrementSubtotal(-1)">
+          <ion-icon name="remove"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-2>
+        <button ion-button icon-only full (press)="onPress($event)" (onPressEnd)="onRelease($event)" (tap)="incrementTip(.01)">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col col-8>
+        <ion-item>
+          <ion-input placeholder="15%" [ngModel]="tip" (ngModelChange)="onTipChange($event)"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-2>
+        <button ion-button icon-only full (press)="incrementSubtotal(-.01, true)" (tap)="incrementTip(-.01)">
+          <ion-icon name="remove"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-item>{{ total | currency:'USD':true}}</ion-item>
+  </section>
+  <!--<ion-toolbar class="pin-to-bottom"> A THING </ion-toolbar>-->
+
+  <ion-toolbar *ngIf="keyboardOpen" position="bottom" class="pin-to-bottom"  [style.bottom]="keyboardHeight / 2 + 'px'">
+    <ion-row>
+      <ion-col>
+        <button ion-button outline round color="primary">15%</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button outline round color="primary">20%</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button outline round color="primary">25%</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="dark" style="max-height: 260px;">
+    <pre style="color: #FFF; font-size: 11px; overflow-y: scroll;">
+      {{ tapTimer | json }}
+    </pre>
+  </ion-toolbar>
+</ion-footer>
