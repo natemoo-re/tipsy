@@ -1,20 +1,16 @@
-Ionic 2 App Base
+Tipsy App
 =====================
 
-This is the base template for Ionic 2 starter apps.
+Tipsy is a an web/native app for calculating tips and splitting dinner bills among friends.
+It integrates well with Venmo.
 
-## Using this project
+## Contributing
 
-You'll need the Ionic CLI with support for v2 apps:
+More info can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page, but you'll need the Ionic CLI with support for v2 apps:
 
 ```bash
 $ npm install -g ionic
+$ cd path/to/tipsy
+$ npm install
 ```
-
-Then run:
-
-```bash
-$ ionic start myApp
-```
-
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
+Now, go ahead and run `$ ionic serve` to get started
